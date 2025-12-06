@@ -3,7 +3,17 @@ const router = express.Router();
 
 
 router.get('', (req, res) => {
-    res.send('Hello');
+    const locals = {
+        title: 'Node.js Blog',
+        description: 'A simple blog with Node.js, express and mongo.db',
+    };
+
+
+    res.render('index', locals);
+});
+
+router.get('/about', (req, res) => {
+    res.render('about');
 });
 
 
